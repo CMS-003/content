@@ -1,0 +1,19 @@
+version: "3"
+services: 
+  content:
+    image: cms-content:v0.0.4
+    environment:
+      - NODE_ENV=prod
+    env_file:
+      - env/prod.env
+    working_dir: "/cms/content/"
+    networks: 
+      - allinone
+    volumes:
+      - ./:/cms/content/
+    ports:
+      - '3334:3333'
+    command: "npm run start:prod"
+networks: 
+  allinone:
+    external: true
