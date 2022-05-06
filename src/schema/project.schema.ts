@@ -2,10 +2,10 @@ import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({ collection: 'project_info', timestamps: {} })
 export class Project {
-  @Prop(String)
+  @Prop()
   _id: string;
 
-  @Prop(String)
+  @Prop()
   title: string;
 }
 export type ProjectType = Project;

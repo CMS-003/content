@@ -23,14 +23,4 @@ export class ProjectService {
   async getInfo(query): Promise<any> {
     return this.baseModel.findOne(query).lean(true);
   }
-  async update(query, data: UpdateProjectDTO): Promise<any> {
-    await this.baseModel.updateOne(query, { $set: data });
-    return;
-  }
-  async create(data: CreateProjectDTO): Promise<any> {
-    await this.baseModel.create(data);
-  }
-  async destroy(query): Promise<any> {
-    await this.baseModel.deleteOne(query);
-  }
 }
